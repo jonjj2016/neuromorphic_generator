@@ -19,6 +19,7 @@ function App() {
     intensity: 0.2,
     blure: 60,
     shades: [],
+    spread: 0,
     shape: 1,
     copied: false,
     shapes: [1, 2, 3, 4],
@@ -26,7 +27,7 @@ function App() {
   });
   useEffect(() => {
     setState({ ...state, box_shadow: compose_shadow(state), shades: defineShades(state.color, state.intensity) });
-  }, [state.color, state.current_direction, state.distance, state.radius, state.blure, state.intensity, state.shape, state.backgroundColor]);
+  }, [state.color, state.spread, state.current_direction, state.distance, state.radius, state.blure, state.intensity, state.shape, state.backgroundColor]);
   return (
     <Wrapper color={state.color}>
       <Mdal state={state} setState={setState} />

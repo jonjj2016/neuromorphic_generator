@@ -32,7 +32,11 @@ box-shadow: ${state.box_shadow};
 
     setState({ ...state, intensity: value / 100 });
   };
+  const onspreadChange = (e) => {
+    const { name, value } = e.target;
 
+    setState({ ...state, spread: value });
+  };
   const onSubmit = (e) => {
     e.preventDefault();
     setState({ ...state, color: stat.input, backgroundColor: stat.input });
@@ -75,6 +79,10 @@ box-shadow: ${state.box_shadow};
       <div className='container'>
         <h2>Blur</h2>
         <Slider type='range' name='blure' min='0' max='100' value={state.blure} onChange={onChange} />
+      </div>
+      <div className='container'>
+        <h2>Spread</h2>
+        <Slider type='range' name='spread' min='-50' max='50' value={state.spread} onChange={onspreadChange} />
       </div>
       <div className='buttons'>
         <Button onClick={onClick} id='1' btn_txt='Normal' box_shadow={state.box_shadow} color={state.color} />

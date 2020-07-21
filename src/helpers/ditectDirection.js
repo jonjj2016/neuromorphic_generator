@@ -22,8 +22,7 @@ export const isDark = (color) => {
 
 export const compose_shadow = (state) => {
     const dir_sign = detectDirection(state.current_direction, state.directions);
-    const shades = chroma.scale(['#ffffff', state.color, '#222222']).colors(12);
-    const shades2 = chroma.scale([state.color]).colors(2);
+
 
     let a = (chroma(state.color).darken(state.intensity)._rgb);
     let b = (chroma(state.color).brighten(state.intensity)._rgb);
@@ -34,13 +33,13 @@ export const compose_shadow = (state) => {
 
     if (state.shape == 1) {
 
-        box_shadow = `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px ${colors[0]}`;
+        box_shadow = `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${state.spread}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px  ${state.spread}px ${colors[0]}`;
     } else if (state.shape == 2) {
-        box_shadow = `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px ${colors[0]},inset ${dir_sign[0] + state.distance-5}px ${dir_sign[1] + state.distance-5}px ${state.blure}px ${colors[1]}, inset ${dir_sign[2] + state.distance-5}px ${dir_sign[3] + state.distance-5}px ${state.blure}px ${colors[0]}`;
+        box_shadow = `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px  ${state.spread}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px  ${state.spread}px ${colors[0]},inset ${dir_sign[0] + state.distance-5}px ${dir_sign[1] + state.distance-5}px ${state.blure}px  ${state.spread}px ${colors[1]}, inset ${dir_sign[2] + state.distance-5}px ${dir_sign[3] + state.distance-5}px ${state.blure}px  ${state.spread}px ${colors[0]}`;
     } else if (state.shape == 3) {
-        box_shadow = `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px ${colors[0]}`;
+        box_shadow = `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px  ${state.spread}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px  ${state.spread}px ${colors[0]}`;
     } else if (state.shape == 4) {
-        box_shadow = `inset ${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${colors[1]}, inset ${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px ${colors[0]}`;
+        box_shadow = `inset ${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px  ${state.spread}px ${colors[1]}, inset ${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px  ${state.spread}px ${state.blure}px ${colors[0]}`;
 
     }
     return box_shadow
