@@ -47,6 +47,9 @@ box-shadow: ${state.box_shadow};
       setState({ ...state, shape: e.target.id, backgroundColor: state.color });
     }
   };
+  const onCopy = () => {
+    setState({ ...state, copied: true });
+  };
   return (
     <Wrapper color={isDark(state.color)} dir_sign={dir_sign} state={state}>
       <form onSubmit={onSubmit}>
@@ -84,7 +87,7 @@ box-shadow: ${state.box_shadow};
         <span>background</span>: {state.backgroundColor}; <br />
         <span>box-shadow</span>: {state.box_shadow}; <br />
         <div className='icon'>
-          <CopyToClipboard text={text} onCopy={() => 'copied'}>
+          <CopyToClipboard text={text} onCopy={onCopy}>
             <Icon name='code' size='big' />
           </CopyToClipboard>
         </div>

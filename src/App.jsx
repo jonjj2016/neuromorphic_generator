@@ -5,6 +5,7 @@ import Main from './Components/Neuromporphism/Container';
 import Controllers from './Components/Controllers/Container';
 import styled from 'styled-components';
 import { compose_shadow, defineShades } from './helpers/ditectDirection';
+import Mdal from './Components/Modal';
 
 function App() {
   const [state, setState] = useState({
@@ -19,15 +20,16 @@ function App() {
     blure: 60,
     shades: [],
     shape: 1,
+    copied: false,
     shapes: [1, 2, 3, 4],
     box_shadow: '20px 20px 60px #489dcf,-20px -20px 60px #62d5ff ',
   });
   useEffect(() => {
-    console.log(state.shape);
     setState({ ...state, box_shadow: compose_shadow(state), shades: defineShades(state.color, state.intensity) });
   }, [state.color, state.current_direction, state.distance, state.radius, state.blure, state.intensity, state.shape, state.backgroundColor]);
   return (
     <Wrapper color={state.color}>
+      <Mdal state={state} setState={setState} />
       <Main state={state} setState={setState} />
       <Controllers state={state} setState={setState} />
     </Wrapper>
