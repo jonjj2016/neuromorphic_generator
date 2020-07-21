@@ -23,7 +23,7 @@ function App() {
     box_shadow: '20px 20px 60px #489dcf,-20px -20px 60px #62d5ff ',
   });
   useEffect(() => {
-    console.log(state);
+    console.log(state.shape);
     setState({ ...state, box_shadow: compose_shadow(state), shades: defineShades(state.color, state.intensity) });
   }, [state.color, state.current_direction, state.distance, state.radius, state.blure, state.intensity, state.shape, state.backgroundColor]);
   return (

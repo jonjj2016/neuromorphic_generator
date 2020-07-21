@@ -32,8 +32,12 @@ export const compose_shadow = (state) => {
 
     let box_shadow
 
-    if (state.shape == 1 || state.shape == 3 || state.shape == 2) {
+    if (state.shape == 1) {
 
+        box_shadow = `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px ${colors[0]}`;
+    } else if (state.shape == 2) {
+        box_shadow = `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px ${colors[0]},inset ${dir_sign[0] + state.distance-5}px ${dir_sign[1] + state.distance-5}px ${state.blure}px ${colors[1]}, inset ${dir_sign[2] + state.distance-5}px ${dir_sign[3] + state.distance-5}px ${state.blure}px ${colors[0]}`;
+    } else if (state.shape == 3) {
         box_shadow = `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px ${colors[0]}`;
     } else if (state.shape == 4) {
         box_shadow = `inset ${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${colors[1]}, inset ${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px ${colors[0]}`;

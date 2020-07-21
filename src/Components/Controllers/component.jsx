@@ -39,7 +39,6 @@ box-shadow: ${state.box_shadow};
   };
 
   const onClick = (e) => {
-    console.log(state);
     if (e.target.id == 2) {
       setState({ ...state, shape: e.target.id, backgroundColor: `linear-gradient(to ${state.current_direction}, ${state.shades[1]} ,${state.shades[0]})` });
     } else if (e.target.id == 3) {
