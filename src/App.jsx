@@ -40,5 +40,10 @@ const Wrapper = styled.div`
   background: ${({ color }) => color};
   justify-content: space-around;
   align-items: center;
+  @media only screen and (max-width: 1100px) {
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 4rem 0;
+  }
 `;
 export default App;

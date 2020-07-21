@@ -6,48 +6,43 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  /* border: 5px solid; */
   box-sizing: border-box;
+  @media only screen and (max-width: 1100px) {
+    flex-direction: column;
+    height: 65rem;
+    width: 25rem;
+    padding: 8rem;
+    margin-top: 60rem;
+    .dir_1,
+    .dir_2,
+    .dir_3,
+    .dir_4 {
+      position: relative;
+    }
+    .dirButtons {
+      display: flex;
+    }
+  }
   .dir_1 {
     position: absolute;
 
     top: 0;
     left: 0;
-    /* width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 50px 50px 0 0;
-    border-color: #007bff transparent transparent transparent; */
   }
   .dir_2 {
     position: absolute;
     top: 0;
-    right: 0;
-    /* width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 50px 50px 0;
-    border-color: transparent #007bff transparent transparent; */
+    right: 5rem;
   }
   .dir_3 {
     position: absolute;
-    bottom: 0;
+    bottom: 5rem;
     left: 0;
-    /* width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 50px 0 0 50px;
-    border-color: transparent transparent transparent #007bff; */
   }
   .dir_4 {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    /* width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 50px 50px;
-    border-color: transparent transparent #007bff transparent; */
+    bottom: 5rem;
+    right: 5rem;
   }
 `;
 export const Content = styled.div`
@@ -56,4 +51,8 @@ export const Content = styled.div`
   width: ${({ state }) => state.size}px;
   border-radius: ${({ state }) => state.radius}%;
   box-shadow: ${({ state }) => state.box_shadow};
+  @media only screen and (max-width: 1100px) {
+    height: 15rem;
+    width: 15rem;
+  }
 `;

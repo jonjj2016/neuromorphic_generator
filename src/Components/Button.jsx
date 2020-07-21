@@ -20,6 +20,10 @@ const Btn = styled.button`
   cursor: pointer;
   border-radius: 15px;
   /* box-shadow: ${({ box_shadow }) => box_shadow}; */
+  @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      margin:1rem
+    }
 `;
 
 export default Button;

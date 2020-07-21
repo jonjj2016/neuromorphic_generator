@@ -17,13 +17,15 @@ const Component = ({ state, setState }) => {
   return (
     <Wrapper state={state}>
       <Content colors={state.shades} dir_sign={dir_sign} state={state} />
-      {state.directions.map((item, index) => {
-        return (
-          <div key={index} className={`dir_${index + 1}`}>
-            <DirToggler setState={setState} colors={state.shades} dir_sign={dir_sign} state={state} onClick={onClick} name={item} />
-          </div>
-        );
-      })}
+      <div className='dirButtons'>
+        {state.directions.map((item, index) => {
+          return (
+            <div key={index} className={`dir_${index + 1}`}>
+              <DirToggler setState={setState} colors={state.shades} dir_sign={dir_sign} state={state} onClick={onClick} name={item} />
+            </div>
+          );
+        })}
+      </div>
     </Wrapper>
   );
 };
