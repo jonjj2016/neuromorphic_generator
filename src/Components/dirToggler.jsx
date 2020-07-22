@@ -30,7 +30,9 @@ const Wrapper = styled.div`
     align-items: center;
     background-color: transparent;
     box-shadow: inset ${({ dir_sign, state, colors }) => `${dir_sign[0]}6px ${dir_sign[1]}6px ${state.blure}px ${colors[1]},inset ${dir_sign[2]}6px ${dir_sign[3]}6px ${state.blure}px ${colors[0]}`};
-  }
+    -webkit-box-shadow:inset ${({ dir_sign, state, colors }) => `${dir_sign[0]}6px ${dir_sign[1]}6px ${state.blure}px ${colors[1]},inset ${dir_sign[2]}6px ${dir_sign[3]}6px ${state.blure}px ${colors[0]}`};
+    -moz-box-shadow:inset ${({ dir_sign, state, colors }) => `${dir_sign[0]}6px ${dir_sign[1]}6px ${state.blure}px ${colors[1]},inset ${dir_sign[2]}6px ${dir_sign[3]}6px ${state.blure}px ${colors[0]}`}
+}
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -38,6 +40,8 @@ const Wrapper = styled.div`
   align-items: center;
   /* background: ${({ state }) => state.color}; */
   box-shadow:  ${({ dir_sign, state, colors }) => state.box_shadow};
+  -webkit-box-shadow:${({ dir_sign, state, colors }) => state.box_shadow};
+    -moz-box-shadow:${({ dir_sign, state, colors }) => state.box_shadow}
   /* box-shadow:  ${({ dir_sign, state, colors }) => `${dir_sign[0]}6px ${dir_sign[1]}6px ${state.blure}px ${colors[1]}, ${dir_sign[2]}6px ${dir_sign[3]}6px ${state.blure}px ${colors[0]}`}; */
  
   /* box-shadow: ${({ dir_sign, state, colors }) => `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px ${colors[1]},${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px ${colors[0]}`}; */

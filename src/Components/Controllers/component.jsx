@@ -13,6 +13,8 @@ const Component = ({ state, setState }) => {
 border-radius: ${state.radius}%; 
 background: ${state.backgroundColor}; 
 box-shadow: ${state.box_shadow}; 
+-webkit-box-shadow:${state.box_shadow}; 
+-moz-box-shadow: ${state.box_shadow}; 
 `;
   const onChange = (e) => {
     const { name, value } = e.target;

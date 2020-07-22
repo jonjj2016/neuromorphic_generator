@@ -51,6 +51,8 @@ export const Content = styled.div`
   width: ${({ state }) => state.size}px;
   border-radius: ${({ state }) => state.radius}%;
   box-shadow: ${({ state }) => state.box_shadow};
+  -webkit-box-shadow: ${({ state }) => state.box_shadow};
+  -moz-box-shadow: ${({ state }) => state.box_shadow};
   @media only screen and (max-width: 1100px) {
     height: 15rem;
     width: 15rem;

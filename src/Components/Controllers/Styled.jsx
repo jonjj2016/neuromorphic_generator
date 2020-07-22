@@ -8,6 +8,8 @@ export const Wrapper = styled.div`
   padding: 2rem;
   box-shadow: ${({ dir_sign, state }) => `${dir_sign[0] + state.distance}px ${dir_sign[1] + state.distance}px ${state.blure}px #a4a4a4,${dir_sign[2] + state.distance}px ${dir_sign[3] + state.distance}px ${state.blure}px #ffffff`};
   box-shadow: ${({ state }) => state.box_shadow};
+  -webkit-box-shadow: ${({ state }) => state.box_shadow};
+  -moz-box-shadow: ${({ state }) => state.box_shadow};
   @media only screen and (max-width: 1100px) {
     min-height: 70rem;
     width: 25rem;
@@ -33,6 +35,8 @@ export const Wrapper = styled.div`
     width: 100%;
     padding: 2rem;
     box-shadow: ${({ state }) => ` inset 20px 20px 60px #489dcf ${state.shades[0]},inset -20px -20px 60px  ${state.shades[1]}`};
+    -webkit-box-shadow: ${({ state }) => ` inset 20px 20px 60px #489dcf ${state.shades[0]},inset -20px -20px 60px  ${state.shades[1]}`};
+    -moz-box-shadow: ${({ state }) => ` inset 20px 20px 60px #489dcf ${state.shades[0]},inset -20px -20px 60px  ${state.shades[1]}`};
     border-radius: 2rem;
     .icon {
       position: absolute;
@@ -68,4 +72,6 @@ export const Input = styled.input`
   font-size: 1.5rem;
   letter-spacing: 2px;
   box-shadow: ${({ state }) => state.box_shadow};
+  -webkit-box-shadow: ${({ state }) => state.box_shadow};
+  -moz-box-shadow: ${({ state }) => state.box_shadow};
 `;
