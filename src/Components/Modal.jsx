@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { isDark } from '../helpers/ditectDirection';
 import styled from 'styled-components';
 
 let interval;
@@ -11,13 +12,17 @@ const Modal = ({ state, setState }) => {
     }
     return () => clearTimeout(interval);
   }, [state.copied]);
-  return <ModalWrapper open={state.copied}>Copied!!!</ModalWrapper>;
+  return (
+    <ModalWrapper color={isDark(state.color)} open={state.copied}>
+      Copied!!!
+    </ModalWrapper>
+  );
 };
 const ModalWrapper = styled.div`
   font-size: 3rem;
   position: fixed;
   z-index: 10;
-  color: #eee;
+  color: ${({ color }) => color};
   top: 5%;
   right: 10%;
   transition: 300ms;

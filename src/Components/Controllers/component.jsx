@@ -8,14 +8,17 @@ import { Icon } from 'semantic-ui-react';
 
 const Component = ({ state, setState }) => {
   const dir_sign = detectDirection(state.current_direction, state.directions);
+
   const [stat, setStat] = useState({ input: state.color });
+
   const text = `
-border-radius: ${state.radius}%; 
-background: ${state.backgroundColor}; 
-box-shadow: ${state.box_shadow}; 
--webkit-box-shadow:${state.box_shadow}; 
--moz-box-shadow: ${state.box_shadow}; 
+      border-radius: ${state.radius}%; 
+      background: ${state.backgroundColor}; 
+      box-shadow: ${state.box_shadow}; 
+      -webkit-box-shadow:${state.box_shadow}; 
+      -moz-box-shadow: ${state.box_shadow}; 
 `;
+
   const onChange = (e) => {
     const { name, value } = e.target;
     if (name == 'distance') {
